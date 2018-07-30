@@ -3,7 +3,6 @@ package tk.mybatis.simple.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 角色表
@@ -31,6 +30,7 @@ public class SysRole implements Serializable {
 	 */
 	private Date createTime;
 
+	private SysUser user;
 
 	public Long getId() {
 		return id;
