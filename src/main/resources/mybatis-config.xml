@@ -16,8 +16,10 @@
                 <property name="" value=""></property>
             </transactionManager>
             <dataSource type="UNPOOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/code?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>
+                <!--<property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+                <property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+                <!--<property name="url" value="jdbc:mysql://localhost:3306/code?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>-->
+                <property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/code?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>
                 <property name="username" value="root"></property>
                 <property name="password" value="tang"></property>
             </dataSource>
