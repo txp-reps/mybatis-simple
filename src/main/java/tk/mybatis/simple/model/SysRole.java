@@ -1,8 +1,10 @@
 package tk.mybatis.simple.model;
 
 
+import tk.mybatis.simple.type.Enabled;
+
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 /**
  * 角色表
@@ -20,17 +22,36 @@ public class SysRole implements Serializable {
 	/**
 	 * 有效标志
 	 */
-	private Long enabled;
-	/**
-	 * 创建人
-	 */
-	private String createBy;
-	/**
-	 * 创建时间
-	 */
-	private Date createTime;
+	private Enabled enabled;
+
 
 	private SysUser user;
+	/**
+	 * 角色包含的权限列表
+	 */
+	List<SysPrivilege> privilegeList;
+	/**
+	 * 创建信息
+	 */
+	private CreateInfo createInfo;
+
+	public CreateInfo getCreateInfo() {
+		return createInfo;
+	}
+
+	public void setCreateInfo(CreateInfo createInfo) {
+		this.createInfo = createInfo;
+	}
+
+
+	public List<SysPrivilege> getPrivilegeList() {
+		return privilegeList;
+	}
+
+	public void setPrivilegeList(List<SysPrivilege> privilegeList) {
+		this.privilegeList = privilegeList;
+	}
+
 
 	public Long getId() {
 		return id;
@@ -48,29 +69,15 @@ public class SysRole implements Serializable {
 		this.roleName = roleName;
 	}
 
-	public Long getEnabled() {
+	public Enabled getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(Long enabled) {
+	public void setEnabled(Enabled enabled) {
 		this.enabled = enabled;
 	}
 
-	public String getCreateBy() {
-		return createBy;
-	}
 
-	public void setCreateBy(String createBy) {
-		this.createBy = createBy;
-	}
-
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
 
 
 }
